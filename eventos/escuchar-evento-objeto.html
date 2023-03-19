@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuchar un Evento con un Objeto</title>
+</head>
+<body>
+    <h1>Escuchar un Evento con un Objeto</h1>
+
+    <button id="miboton">Púlsame!!!</button>
+    <div id="mensaje"></div>
+
+    <script>
+        const mensaje = document.getElementById("mensaje");
+        const boton = document.getElementById("miboton");
+
+        const eventManager = {
+            handleEvent: function (ev) {                
+                if (ev.type=="click")
+                    mensaje.innerHTML = "Me has pulsado";
+                if (ev.type=="mouseover")
+                    mensaje.innerHTML = "Has pasado sobre mí";
+            }
+        }
+
+        boton.addEventListener("click",eventManager);
+        boton.addEventListener("mouseover",eventManager);
+    </script>
+
+    <br/><br/>
+
+    <hr>
+    Artículo disponible en: <a href="http://lineadecodigo.com/html5/pdte/">http://lineadecodigo.com/html5/pdte/</a><br/>
+    <a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
+
+    
+</body>
+</html>
