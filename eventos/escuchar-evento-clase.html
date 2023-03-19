@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escuchar un Evento con un Objeto</title>
+    <title>Escuchar un Evento con una Clase</title>
 </head>
 <body>
-    <h1>Escuchar un Evento con un Objeto</h1>
+    <h1>Escuchar un Evento con una Clase</h1>
 
     <button id="miboton">Púlsame!!!</button>
-    <div id="mensaje"></div>
+    <div id="saludo"></div>
 
     <script>
-        const mensaje = document.getElementById("mensaje");
+        const saludo = document.getElementById("saludo");
         const boton = document.getElementById("miboton");
 
-        const eventManager = {
-            handleEvent: function (ev) {               
-                if (ev.type=="click")
-                    mensaje.innerHTML = "Me has pulsado";
-                if (ev.type=="mouseover")
-                    mensaje.innerHTML = "Has pasado sobre mí";
+        class EventManager {    
+            
+            mensaje;
+
+            constructor(mensaje){
+                this.mensaje = mensaje;
             }
+
+            handleEvent (ev) {
+                console.log(ev.type);
+                if (ev.type=="click")
+                    this.mensaje.innerHTML = "Me has pulsado";
+                if (ev.type=="mouseover")
+                    this.mensaje.innerHTML = "Has pasado sobre mí";
+            }
+
         }
 
+        const eventManager = new EventManager(saludo);
         boton.addEventListener("click",eventManager);
         boton.addEventListener("mouseover",eventManager);
     </script>
