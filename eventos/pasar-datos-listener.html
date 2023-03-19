@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasar datos a un Listener</title>
+</head>
+<body>
+
+    <h1>Pasar datos a un Listener</h1>
+
+    <button id="saludar">Saludar</button>
+    <span id="mensaje"></span>
+    
+
+    <script>
+        let nombre = "Víctor";
+        const boton = document.getElementById("saludar");
+        const mensaje = document.getElementById("mensaje");
+        
+        boton.addEventListener("click", function () {
+            console.log(this);
+            mensaje.innerHTML = "Hola " + this;
+        }.bind(nombre)
+        );
+        
+    </script>
+
+    <hr>
+    Artículo disponible en: <a href="http://lineadecodigo.com/html5/pdte/">http://lineadecodigo.com/html5/pdte/</a><br/>
+    <a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
+
+    
+</body>
+</html>
