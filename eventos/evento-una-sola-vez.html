@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento una sola vez</title>
+</head>
+<body>
+    <h1>Evento una sola vez</h1>
+
+
+    <form>
+        <label for="elegido">El elegido: </label>
+        <input id="elegido" type="text"/>
+    </form>
+
+    Solo me puedes elegir una vez:<br>
+    <button id="uno">Uno</button>
+    <button id="dos">Dos</button>
+    <button id="tres">Tres</button>
+
+    <script>
+
+        const elegido = document.getElementById("elegido");
+        const b1 = document.getElementById("uno");
+        const b2 = document.getElementById("dos");
+        const b3 = document.getElementById("tres");
+
+        const controlador = {
+            handleEvent: function(ev) {
+                elegido.value = ev.target.id;
+            }
+        }
+
+        b1.addEventListener("click",controlador, { once: true });
+        b2.addEventListener("click",controlador, { once: true });
+        b3.addEventListener("click",controlador, { once: true });
+
+
+    </script>
+
+    <hr>
+    Artículo disponible en: <a href="http://lineadecodigo.com/html5/pdte/">http://lineadecodigo.com/html5/pdte/</a><br/>
+    <a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
+    
+</body>
+</html>
