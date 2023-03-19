@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuchar Evento con Función Arrow</title>
+</head>
+<body>
+
+    <h1>Escuchar Evento con Función Arrow</h1>
+
+    <form>
+        <label for="mensaje">Valor: </label>
+        <input id="mensaje" type="text" value="0"/>
+        <button id="inc">+1</button>
+    </form>
+
+
+    <script>
+        const boton = document.getElementById("inc");
+        const mensaje = document.getElementById("mensaje");
+
+        boton.addEventListener("click", (ev)=>{
+            let valor = parseInt(mensaje.value) + 1;
+            mensaje.value = valor;
+            ev.preventDefault();
+        });
+    </script>    
+    
+    <hr>
+    Artículo disponible en: <a href="http://lineadecodigo.com/html5/pdte/">http://lineadecodigo.com/html5/pdte/</a><br/>
+    <a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
+
+</body>
+</html>
